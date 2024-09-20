@@ -1,5 +1,6 @@
 import {Turnstile} from '@marsidev/react-turnstile';
-import {useEffect, useRef} from 'react';
+import {__} from '@wordpress/i18n';
+import {useEffect, useRef, useCallback} from 'react';
 
 export default function TurnstileField({
                                          Label,
@@ -8,8 +9,19 @@ export default function TurnstileField({
                                          inputProps
                                        }) {
   const ref = useRef();
-  const { setValue} = window.givewp.form.hooks.useFormContext();
-  const {submitCount} = window.givewp.form.hooks.useFormState();
+  const { setValue, setError } = window.givewp.form.hooks.useFormContext();
+  const { submitCount } = window.givewp.form.hooks.useFormState();
+  const setFormError = useCallback(() =>
+    setError('FORM_ERROR', {
+      message: __('You must be a human.', 'give')
+    }), [setError]
+  );
+
+  useEffect(() => {
+    if (fieldError && fieldError !== 'This is a required field') {
+      setFormError();
+    }
+  }, [fieldError]);
 
   useEffect(() => {
     ref.current?.reset();
@@ -19,12 +31,16 @@ export default function TurnstileField({
     <>
       <label className={fieldError && 'givewp-field-error-label'}>
 
-        <Label />
+        {/*<Label />*/}
 
         <Turnstile
           ref={ref}
           siteKey={window.giveTurnstileFieldSettings.siteKey}
-          onError={() => console.log('error')}
+          onError={() => {
+              console.log('error');
+              setFormError();
+            }
+          }
           onExpire={() => ref.current?.reset()}
           onSuccess={value => {
             console.log('success');
