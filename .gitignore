@@ -1,48 +1,80 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# Unit tests
+/tmp
+/tests/bin/tmp
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# Bin files
+/bin/*
+!/bin/.gitkeep
 
-# Configuration
-wp-config.php
+# Numerous always-ignore extensions
+.diff
+.err
+.orig
+.log
+.rej
+.swo
+.swp
+.vi
+~
+.sass-cache
 
-# Example themes
-/wp-content/themes/twenty*/
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.vscode
 
-# Example plugin
-/wp-content/plugins/hello.php
+# Dreamweaver added files
+_notes
+dwsync.xml
 
-# Uploads
-/wp-content/uploads/
+# Komodo
+*.komodoproject
+.komodotools
 
-# Log files
-*.log
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+.idea
+cache
+node_modules
+assets/dist/
+.storybook-static
+release
+public
+.storybook-static
+languages
 
-# htaccess
-/.htaccess
+# Composer
+vendor
+# PHPCS
+.phpcs.xml
+phpcs.xml
 
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
+# POT File
+languages/*
+!languages/README.md
 
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# @wordpress/scripts build directory
+build
+**/build.*
+**/build.asset.*
+# Assert directory
+assets/dist
+build
+**/build.*
+**/build.asset.*
+
+.phpunit.result.cache
+
+# wp-env
+.wp-env.override.json

@@ -1,0 +1,23 @@
+{
+  "name": "give-cloudflare-turnstile",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "plugin-zip": "wp-scripts plugin-zip"
+  },
+  "author": "GiveWP",
+  "license": "ISC",
+  "files": [
+    "give-form-security.php",
+    "build",
+    "src",
+    "vendor",
+    "package-lock.json"
+  ],
+  "dependencies": {
+    "@marsidev/react-turnstile": "^1.0.2",
+    "@wordpress/scripts": "^27.5.0"
+  }
+}
