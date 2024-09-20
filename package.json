@@ -10,11 +10,13 @@
   "author": "GiveWP",
   "license": "ISC",
   "files": [
-    "give-form-security.php",
+    "givewp-cloudflare-turnstile.php",
     "build",
     "src",
     "vendor",
-    "package-lock.json"
+    "package-lock.json",
+    "readme.txt",
+    "README.md"
   ],
   "dependencies": {
     "@marsidev/react-turnstile": "^1.0.2",
