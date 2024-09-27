@@ -14,59 +14,31 @@
  * Domain Path:         /languages
  */
 
-use Give\Framework\FieldsAPI\DonationForm;
-use GiveCloudflareTurnstile\FormExtension\DonationForm\Fields\TurnstileField;
-use GiveCloudflareTurnstile\FormExtension\DonationForm\Rules\TurnstileFieldRule;
-
 defined('ABSPATH') or exit;
+
+// Add-on name
+define('GIVE_CLOUDFLARE_TURNSTILE_NAME', 'Give - Cloudflare Turnstile');
+
+// Versions
+define('GIVE_CLOUDFLARE_TURNSTILE_VERSION', '1.0.0');
+define('GIVE_CLOUDFLARE_TURNSTILE_MIN_GIVE_VERSION', '3.0.0');
+
+// Add-on paths
+define('GIVE_CLOUDFLARE_TURNSTILE_DIR', plugin_dir_path(__FILE__));
+define('GIVE_CLOUDFLARE_TURNSTILE_URL', plugin_dir_url(__FILE__));
+define('GIVE_CLOUDFLARE_TURNSTILE_BASENAME', plugin_basename(__FILE__));
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require __DIR__ . '/vendor/autoload.php';
 }
 
-// Register the add-on service provider with GiveWP core.
-add_action('givewp_donation_form_enqueue_scripts', function () {
-    $turnstileFieldScriptAsset = Give\Framework\Support\Facades\Scripts\ScriptAsset::get(
-        plugin_dir_path(__FILE__) . 'build/turnstileField.asset.php'
-    );
-
-    wp_enqueue_script(
-        'give-turnstile-field',
-        plugin_dir_url(__FILE__) . 'build/turnstileField.js',
-        $turnstileFieldScriptAsset['dependencies'],
-        false,
-        true
-    );
-
-    wp_add_inline_script(
-        'give-turnstile-field',
-        'window.giveTurnstileFieldSettings = ' . wp_json_encode([
-            'siteKey' => defined('GIVE_TURNSTILE_SITE_KEY') ? GIVE_TURNSTILE_SITE_KEY : '',
-        ]) . ';',
-        'before'
-    );
-});
-
-// Register the add-on service provider with GiveWP core.
- add_action('givewp_donation_form_schema', function (DonationForm $form, int $formId) {
-     if (!apply_filters('give_cloudflare_turnstile_enabled', false, $formId)) {
-         return;
-     }
-
-    /** @var TurnstileField $field */
-    $field = TurnstileField::make('turnstile')
-        ->label(__('Please verify you are human', 'give'))
-        ->defaultValue('')
-        ->rules('required', new TurnstileFieldRule());
-
-    $formNodes = $form->all();
-    $lastSection = $form->count() ? $formNodes[$form->count() - 1] : null;
-
-    $siteKey = defined('GIVE_TURNSTILE_SITE_KEY') ? GIVE_TURNSTILE_SITE_KEY : '';
-    $secretKey = defined('GIVE_TURNSTILE_SECRET_KEY') ? GIVE_TURNSTILE_SECRET_KEY : '';
-
-
-    if ($lastSection && !empty($siteKey) && !empty($secretKey)) {
-        $lastSection->append($field);
+ // Register the add-on service provider with the GiveWP core.
+add_action(
+    'before_give_init',
+    function () {
+        // Check Give min required version.
+        if (defined('GIVE_VERSION') && version_compare(GIVE_VERSION, GIVE_CLOUDFLARE_TURNSTILE_MIN_GIVE_VERSION, '>=')) {
+            give()->registerServiceProvider(GiveCloudflareTurnstile\FormExtension\ServiceProvider::class);
+        }
     }
-}, 10, 2);
+);
