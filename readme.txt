@@ -1,7 +1,7 @@
 === Give - Cloudflare Turnstile ===
 Contributors: givewp
 Donate link: https://givewp.com
-Tags: donations, donation, ecommerce, e-commerce, fundraising, fundraiser, fees
+Tags: donation, spam, captcha, cloudflare, turnstile, privacy, security
 Requires at least: 6.4
 Tested up to: 6.6
 Stable tag: 1.0.0
@@ -9,8 +9,6 @@ Requires Give: 3.0.0
 Requires PHP: 7.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
-
-Keep more of your donations by asking donor's to take care of the fees.
 
 == Description ==
 
