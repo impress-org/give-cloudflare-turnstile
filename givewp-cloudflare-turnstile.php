@@ -38,6 +38,7 @@ add_action(
     function () {
         // Check Give min required version.
         if (defined('GIVE_VERSION') && version_compare(GIVE_VERSION, GIVE_CLOUDFLARE_TURNSTILE_MIN_GIVE_VERSION, '>=')) {
+            give()->registerServiceProvider(GiveCloudflareTurnstile\Settings\ServiceProvider::class);
             give()->registerServiceProvider(GiveCloudflareTurnstile\FormExtension\ServiceProvider::class);
         }
     }
