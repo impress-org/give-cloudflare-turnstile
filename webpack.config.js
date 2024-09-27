@@ -14,7 +14,7 @@ const defaultConfig = require('@wordpress/scripts/config/webpack.config.js');
 module.exports = {
     ...defaultConfig,
     entry: {
-      turnstileField: srcPath('FormExtension/DonationForm/resources/js/index.js'),
+      turnstileField: srcPath('FormExtension/DonationForm/resources/js/index.ts'),
     },
 };
 
