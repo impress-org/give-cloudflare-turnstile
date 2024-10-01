@@ -4,8 +4,6 @@ namespace GiveCloudflareTurnstile\FormExtension\DonationForm\Actions;
 
 use Give\Framework\Support\Facades\Scripts\ScriptAsset;
 
-use const GIVE_CLOUDFLARE_TURNSTILE_FILE;
-
 /**
  * @since 1.0.0
  */
