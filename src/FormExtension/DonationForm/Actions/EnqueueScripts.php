@@ -3,6 +3,7 @@
 namespace GiveCloudflareTurnstile\FormExtension\DonationForm\Actions;
 
 use Give\Framework\Support\Facades\Scripts\ScriptAsset;
+use GiveCloudflareTurnstile\Settings\Repositories\GlobalSettings;
 
 /**
  * @since 1.0.0
@@ -31,7 +32,7 @@ class EnqueueScripts
         wp_add_inline_script(
             $turnstileFieldScriptHandle,
             'window.giveTurnstileFieldSettings = ' . wp_json_encode([
-                'siteKey' => defined('GIVE_TURNSTILE_SITE_KEY') ? GIVE_TURNSTILE_SITE_KEY : '',
+                'siteKey' => give(GlobalSettings::class)->getSiteKey(),
             ]) . ';',
             'before'
         );

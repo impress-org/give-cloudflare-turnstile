@@ -4,6 +4,7 @@ namespace GiveCloudflareTurnstile\Settings;
 
 use Give\Helpers\Hooks;
 use GiveCloudflareTurnstile\Settings\Actions\RegisterGlobalSettings;
+use GiveCloudflareTurnstile\Settings\Repositories\GlobalSettings;
 
 /**
  * @since 1.0.0
@@ -16,6 +17,7 @@ class ServiceProvider implements \Give\ServiceProviders\ServiceProvider
      */
     public function register()
     {
+        give()->singleton(GlobalSettings::class);
     }
 
     /**
