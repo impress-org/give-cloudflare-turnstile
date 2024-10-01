@@ -10,7 +10,7 @@
  * Requires PHP:        7.2
  * Author:              GiveWP
  * Author URI:          https://givewp.com/
- * Text Domain:         give
+ * Text Domain:         givewp-cloudflare-turnstile
  * Domain Path:         /languages
  */
 

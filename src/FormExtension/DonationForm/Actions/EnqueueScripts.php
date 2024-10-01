@@ -4,6 +4,8 @@ namespace GiveCloudflareTurnstile\FormExtension\DonationForm\Actions;
 
 use Give\Framework\Support\Facades\Scripts\ScriptAsset;
 
+use const GIVE_CLOUDFLARE_TURNSTILE_FILE;
+
 /**
  * @since 1.0.0
  */
@@ -18,8 +20,10 @@ class EnqueueScripts
             GIVE_CLOUDFLARE_TURNSTILE_DIR . 'build/turnstileField.asset.php'
         );
 
+        $turnstileFieldScriptHandle = 'give-turnstile-field';
+
         wp_enqueue_script(
-            'give-turnstile-field',
+            $turnstileFieldScriptHandle,
             GIVE_CLOUDFLARE_TURNSTILE_URL . 'build/turnstileField.js',
             $turnstileFieldScriptAsset['dependencies'],
             false,
@@ -27,11 +31,13 @@ class EnqueueScripts
         );
 
         wp_add_inline_script(
-            'give-turnstile-field',
+            $turnstileFieldScriptHandle,
             'window.giveTurnstileFieldSettings = ' . wp_json_encode([
                 'siteKey' => defined('GIVE_TURNSTILE_SITE_KEY') ? GIVE_TURNSTILE_SITE_KEY : '',
             ]) . ';',
             'before'
         );
+
+        wp_set_script_translations($turnstileFieldScriptHandle, 'givewp-cloudflare-turnstile', GIVE_CLOUDFLARE_TURNSTILE_DIR . "languages");
     }
 }
