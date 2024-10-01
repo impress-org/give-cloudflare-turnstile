@@ -1,5 +1,5 @@
 === Give - Cloudflare Turnstile ===
-Contributors: givewp
+Contributors: givewp, jonwaldstein
 Donate link: https://givewp.com
 Tags: donation, spam, captcha, cloudflare, turnstile, privacy, security
 Requires at least: 6.4
