@@ -16,7 +16,7 @@ class TestTurnstileVerifyResponse extends TestCase
      */
     public function testShouldReturnSelf(): void
     {
-        $response = json_encode([
+        $response = wp_json_encode([
             'success' => true,
             'challenge_ts' => '2021-09-01T00:00:00Z',
             'hostname' => 'example.com',

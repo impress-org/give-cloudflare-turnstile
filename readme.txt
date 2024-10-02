@@ -1,7 +1,7 @@
 === Give - Cloudflare Turnstile ===
 Contributors: givewp, jonwaldstein
 Donate link: https://givewp.com
-Tags: donation, spam, captcha, cloudflare, turnstile, privacy, security
+Tags: donation, spam, captcha, cloudflare turnstile, security
 Requires at least: 6.4
 Tested up to: 6.6
 Stable tag: 1.0.0
@@ -10,9 +10,11 @@ Requires PHP: 7.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
+Reduce donation spam with Cloudflare turnstile, a user-friendly, privacy-preserving alternative to CAPTCHA.
+
 == Description ==
 
-Reduce donation spam with Cloudflare turnstile, a user-friendly, privacy-preserving alternative to CAPTCHA.
+Protect your donation forms from spam with Cloudflare Turnstile. Turnstile is a user-friendly, privacy-preserving alternative to CAPTCHA that helps reduce spam submissions on your GiveWP donation forms.
 
 == Installation ==
 

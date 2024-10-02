@@ -12,6 +12,7 @@
  * Author URI:          https://givewp.com/
  * Text Domain:         givewp-cloudflare-turnstile
  * Domain Path:         /languages
+ * License:             GPLv3
  */
 
 defined('ABSPATH') or exit;

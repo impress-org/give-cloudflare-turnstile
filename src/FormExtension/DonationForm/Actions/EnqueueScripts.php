@@ -5,6 +5,8 @@ namespace GiveCloudflareTurnstile\FormExtension\DonationForm\Actions;
 use Give\Framework\Support\Facades\Scripts\ScriptAsset;
 use GiveCloudflareTurnstile\Settings\Repositories\GlobalSettings;
 
+use const GIVE_CLOUDFLARE_TURNSTILE_VERSION;
+
 /**
  * @since 1.0.0
  */
@@ -25,7 +27,7 @@ class EnqueueScripts
             $turnstileFieldScriptHandle,
             GIVE_CLOUDFLARE_TURNSTILE_URL . 'build/turnstileField.js',
             $turnstileFieldScriptAsset['dependencies'],
-            false,
+            $turnstileFieldScriptAsset['version'],
             true
         );
 
