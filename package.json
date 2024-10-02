@@ -3,6 +3,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "dev": "wp-scripts start",
     "start": "wp-scripts start",
     "build": "wp-scripts build",
     "plugin-zip": "wp-scripts plugin-zip"
