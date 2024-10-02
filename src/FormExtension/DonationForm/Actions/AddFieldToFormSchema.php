@@ -62,7 +62,7 @@ class AddFieldToFormSchema
         }
 
 
-        if ($lastSection) {
+        if ($lastSection && is_null($form->getNodeByName('turnstile'))) {
             $lastSection->append($field);
         }
     }

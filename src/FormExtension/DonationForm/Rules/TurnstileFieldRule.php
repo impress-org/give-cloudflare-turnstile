@@ -6,6 +6,9 @@ use Closure;
 use Give\Log\Log;
 use Give\Vendors\StellarWP\Validation\Contracts\ValidatesOnFrontEnd;
 use Give\Vendors\StellarWP\Validation\Contracts\ValidationRule;
+use GiveCloudflareTurnstile\Settings\Repositories\GlobalSettings;
+use GiveCloudflareTurnstile\Turnstile\Repositories\TurnstileRepository;
+use GiveCloudflareTurnstile\Turnstile\ValueObjects\TurnstileVerifyResponse;
 
 /**
  * @unreleased
@@ -34,8 +37,11 @@ class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
      */
     public function __invoke($value, Closure $fail, string $key, array $values)
     {
-        $siteKey = defined('GIVE_TURNSTILE_SITE_KEY') ? GIVE_TURNSTILE_SITE_KEY : '';
-        $secretKey = defined('GIVE_TURNSTILE_SECRET_KEY') ? GIVE_TURNSTILE_SECRET_KEY : '';
+        /** @var GlobalSettings $settings */
+        $settings = give(GlobalSettings::class);
+
+        $siteKey = $settings->getSiteKey();
+        $secretKey = $settings->getSecretKey();
 
         if (empty($siteKey) || empty($secretKey)) {
             Log::error(__('Turnstile missing credentials.', 'give'), [
@@ -45,17 +51,9 @@ class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
             $fail(__('Permission denied.', 'give'));
         }
 
-        $verify = wp_remote_post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
-            'body' => [
-                'secret' => $secretKey,
-                'response' => $value
-            ]
-        ]);
+        $response = $this->verifyToken($secretKey, $value);
 
-        $verify = wp_remote_retrieve_body($verify);
-        $response = json_decode($verify, false);
-
-        if (!$response->success) {
+        if (!$response->isSuccess()) {
             Log::spam(__('Turnstile verification failed.', 'give'), [
                 'response' => $response,
                 'formId' => $values['formId'] ?? null,
@@ -71,5 +69,16 @@ class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
     public function serializeOption()
     {
         return true;
+    }
+
+    /**
+     * @since 1.0.0
+     */
+    protected function verifyToken(string $secretKey, $value): TurnstileVerifyResponse
+    {
+            /** @var TurnstileRepository $turnstileRepository */
+        $turnstileRepository = give(TurnstileRepository::class);
+
+        return $turnstileRepository->verify($secretKey, $value);
     }
 }
