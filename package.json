@@ -1,26 +1,27 @@
 {
-  "name": "give-cloudflare-turnstile",
-  "private": true,
-  "main": "index.js",
-  "scripts": {
-    "dev": "wp-scripts start",
-    "start": "wp-scripts start",
-    "build": "wp-scripts build",
-    "plugin-zip": "wp-scripts plugin-zip"
-  },
-  "author": "GiveWP",
-  "license": "ISC",
-  "files": [
-    "givewp-cloudflare-turnstile.php",
-    "build",
-    "src",
-    "vendor",
-    "package-lock.json",
-    "readme.txt",
-    "README.md"
-  ],
-  "dependencies": {
-    "@marsidev/react-turnstile": "^1.0.2",
-    "@wordpress/scripts": "^27.5.0"
-  }
+    "name": "give-cloudflare-turnstile",
+    "private": true,
+    "main": "index.js",
+    "scripts": {
+        "dev": "wp-scripts start",
+        "start": "wp-scripts start",
+        "build": "wp-scripts build",
+        "plugin-zip": "wp-scripts plugin-zip"
+    },
+    "author": "GiveWP",
+    "license": "ISC",
+    "files": [
+        "givewp-cloudflare-turnstile.php",
+        "build",
+        "src",
+        "vendor/composer",
+        "vendor/autoload.php",
+        "package-lock.json",
+        "readme.txt",
+        "README.md"
+    ],
+    "dependencies": {
+        "@marsidev/react-turnstile": "^1.0.2",
+        "@wordpress/scripts": "^27.5.0"
+    }
 }

@@ -40,8 +40,6 @@ class ActivationBanner
             'testing' => false, // Never leave true.
         ];
 
-        ray($args);
-
         new Give_Addon_Activation_Banner($args);
     }
 }
