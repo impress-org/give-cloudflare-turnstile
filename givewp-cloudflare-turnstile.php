@@ -15,6 +15,8 @@
  * License:             GPLv3
  */
 
+use GiveCloudflareTurnstile\Addon\Environment;
+
 defined('ABSPATH') or exit;
 
 // Add-on name
@@ -39,7 +41,8 @@ add_action(
     'before_give_init',
     function () {
         // Check Give min required version.
-        if (defined('GIVE_VERSION') && version_compare(GIVE_VERSION, GIVE_CLOUDFLARE_TURNSTILE_MIN_GIVE_VERSION, '>=')) {
+         if (Environment::giveMinRequiredVersionCheck()) {
+            give()->registerServiceProvider(GiveCloudflareTurnstile\Addon\ServiceProvider::class);
             give()->registerServiceProvider(GiveCloudflareTurnstile\Settings\ServiceProvider::class);
             give()->registerServiceProvider(GiveCloudflareTurnstile\FormExtension\ServiceProvider::class);
         }

@@ -4,6 +4,7 @@ namespace GiveCloudflareTurnstile\Tests\Unit;
 
 
 use Give\Tests\TestCase;
+use GiveCloudflareTurnstile\Addon\Environment;
 
 /**
  * @since 1.0.0
@@ -67,6 +68,6 @@ class TestPluginHeaders extends TestCase {
      */
     public function testIsCompatibleWithGiveWP(): void
     {
-        $this->assertTrue(version_compare(GIVE_VERSION, GIVE_CLOUDFLARE_TURNSTILE_MIN_GIVE_VERSION, '>='));
+        $this->assertTrue(Environment::giveMinRequiredVersionCheck());
     }
 }
