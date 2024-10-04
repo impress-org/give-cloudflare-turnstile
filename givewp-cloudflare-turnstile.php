@@ -36,6 +36,9 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require __DIR__ . '/vendor/autoload.php';
 }
 
+// Check to make sure GiveWP core is installed and compatible with this add-on.
+add_action('admin_init', [Environment::class, 'checkEnvironment']);
+
  // Register the add-on service provider with the GiveWP core.
 add_action(
     'before_give_init',

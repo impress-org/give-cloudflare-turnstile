@@ -29,4 +29,12 @@ class GlobalSettings {
     {
         return give_is_setting_enabled(give_get_option('givewp_donation_forms_cloudflare_turnstile_enabled', 'disabled'));
     }
+
+    /**
+     * @since 1.0.0
+     */
+    public function getSettingsUrl(): ?string
+    {
+        return admin_url('edit.php?post_type=give_forms&page=give-settings&tab=advanced&section=cloudflare_turnstile');
+    }
 }

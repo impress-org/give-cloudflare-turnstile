@@ -15,7 +15,7 @@ class ServiceProvider implements \Give\ServiceProviders\ServiceProvider
         */
         public function register()
         {
-            give()->singleton(Links::class);
+
         }
 
         /**
@@ -25,5 +25,9 @@ class ServiceProvider implements \Give\ServiceProviders\ServiceProvider
         {
             // Load add-on links.
             Hooks::addFilter('plugin_action_links_' . GIVE_CLOUDFLARE_TURNSTILE_BASENAME, Links::class);
+
+            if (is_admin()){
+                Hooks::addAction('admin_init', ActivationBanner::class, 'show', 20);
+            }
         }
 }

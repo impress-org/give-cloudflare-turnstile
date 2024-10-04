@@ -2,8 +2,6 @@
 
 namespace GiveCloudflareTurnstile\Addon;
 
-use Give\Framework\Views\View;
-
 /**
  * Helper class responsible for showing add-on notices.
  */
