@@ -1,3 +1,4 @@
+import type {TurnstileInstance} from '@marsidev/react-turnstile';
 import {Turnstile} from '@marsidev/react-turnstile';
 import {__} from '@wordpress/i18n';
 import {useCallback, useEffect, useRef} from 'react';
@@ -13,7 +14,7 @@ export default function TurnstileField({
                                            fieldError,
                                            inputProps
                                        }) {
-    const ref = useRef();
+    const ref = useRef<TurnstileInstance | null>(null);
     const { setValue, setError } = window.givewp.form.hooks.useFormContext();
     const { submitCount } = window.givewp.form.hooks.useFormState();
     const setFormError = useCallback(() =>
