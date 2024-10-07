@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "wp-scripts start",
         "start": "wp-scripts start",
+        "watch": "wp-scripts start",
         "build": "wp-scripts build",
         "plugin-zip": "wp-scripts plugin-zip"
     },

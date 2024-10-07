@@ -63,6 +63,7 @@ export default function TurnstileField({
                         console.error({ turnstileError: errorCode });
 
                         if (errorCodeRetry.challengeTimeout.some(code => errorCode.startsWith(code))) {
+                            console.info('Retrying Turnstile challenge');
                             ref.current?.reset();
                         } else {
                             setFormError();
