@@ -34,7 +34,7 @@ export default function TurnstileField({
                                        }) {
     const ref = useRef<TurnstileInstance | null>(null);
     const { setValue, setError } = window.givewp.form.hooks.useFormContext();
-    const { submitCount, errors } = window.givewp.form.hooks.useFormState();
+    const { submitCount, errors, isSubmitSuccessful } = window.givewp.form.hooks.useFormState();
     const fieldName = inputProps.name;
     const setFormError = useCallback(() =>
         setError('FORM_ERROR', {
@@ -49,8 +49,10 @@ export default function TurnstileField({
     }, [fieldError]);
 
     useEffect(() => {
-        ref.current?.reset();
-    }, [submitCount]);
+        if (!isSubmitSuccessful) {
+            ref.current?.reset();
+        }
+    }, [submitCount, isSubmitSuccessful]);
 
     return (
         <>
