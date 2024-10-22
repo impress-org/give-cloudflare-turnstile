@@ -40,7 +40,7 @@ class View
         $template = GIVE_CLOUDFLARE_TURNSTILE_DIR . "src/{$domain}/resources/views/{$file}.php";
 
         if ( ! file_exists($template)) {
-            throw new InvalidArgumentException("View template file {$template} does not exist");
+            throw new InvalidArgumentException(esc_attr("View template file {$template} does not exist"));
         }
 
         ob_start();

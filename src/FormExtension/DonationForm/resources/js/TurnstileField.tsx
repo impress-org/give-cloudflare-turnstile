@@ -38,7 +38,7 @@ export default function TurnstileField({
     const fieldName = inputProps.name;
     const setFormError = useCallback(() =>
         setError('FORM_ERROR', {
-            message: __('You must be a human.', 'give')
+            message: __('You must be a human.', 'givewp-cloudflare-turnstile')
         }), [setError]
     );
 

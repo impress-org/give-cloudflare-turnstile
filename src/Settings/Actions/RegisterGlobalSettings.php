@@ -47,17 +47,17 @@ class RegisterGlobalSettings
     public function getEnableSettings(): array
     {
         return [
-            'name' => __('Enable Cloudflare Turnstile', 'give'),
+            'name' => __('Enable Cloudflare Turnstile', 'givewp-cloudflare-turnstile'),
             'desc' => __(
                 'If enabled, this option will add a Cloudflare Turnstile widget to all donation forms',
-                'give'
+                'givewp-cloudflare-turnstile'
             ),
             'id' => SettingKeys::ENABLED,
             'type' => 'radio_inline',
             'default' => 'disabled',
             'options' => [
-                'enabled' => __('Enabled', 'give'),
-                'disabled' => __('Disabled', 'give'),
+                'enabled' => __('Enabled', 'givewp-cloudflare-turnstile'),
+                'disabled' => __('Disabled', 'givewp-cloudflare-turnstile'),
             ],
         ];
     }
@@ -69,10 +69,10 @@ class RegisterGlobalSettings
     {
         return [
             'id' => SettingKeys::SITE_KEY,
-            'name' => __('Cloudflare Turnstile Site Key', 'give'),
+            'name' => __('Cloudflare Turnstile Site Key', 'givewp-cloudflare-turnstile'),
             'desc' => __(
                 'Enter your Cloudflare Site Key here. This key is required to connect to the Cloudflare API.',
-                'give'
+                'givewp-cloudflare-turnstile'
             ),
             'type' => 'api_key',
         ];
@@ -85,10 +85,10 @@ class RegisterGlobalSettings
     {
         return [
             'id' => SettingKeys::SECRET_KEY,
-            'name' => __('Cloudflare Turnstile Secret Key', 'give'),
+            'name' => __('Cloudflare Turnstile Secret Key', 'givewp-cloudflare-turnstile'),
             'desc' => __(
                 'Enter your Cloudflare Turnstile Secret key here. This key is required to connect to the Cloudflare API.',
-                'give'
+                'givewp-cloudflare-turnstile'
             ),
             'type' => 'api_key',
         ];

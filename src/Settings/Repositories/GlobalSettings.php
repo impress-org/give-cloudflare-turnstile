@@ -11,7 +11,7 @@ class GlobalSettings {
      */
     public function getSiteKey(): string
     {
-        return (string)defined('GIVE_TURNSTILE_SITE_KEY') ? GIVE_TURNSTILE_SITE_KEY : give_get_option('givewp_cloudflare_turnstile_site_key', '');
+        return (string)defined('GIVE_TURNSTILE_SITE_KEY') ? constant('GIVE_TURNSTILE_SITE_KEY') : give_get_option('givewp_cloudflare_turnstile_site_key', '');
     }
 
     /**
@@ -19,7 +19,7 @@ class GlobalSettings {
      */
     public function getSecretKey(): string
     {
-        return (string)defined('GIVE_TURNSTILE_SECRET_KEY') ? GIVE_TURNSTILE_SECRET_KEY : give_get_option('givewp_cloudflare_turnstile_secret_key', '');
+        return (string)defined('GIVE_TURNSTILE_SECRET_KEY') ? constant('GIVE_TURNSTILE_SECRET_KEY') : give_get_option('givewp_cloudflare_turnstile_secret_key', '');
     }
 
     /**
@@ -35,6 +35,6 @@ class GlobalSettings {
      */
     public function getSettingsUrl(): ?string
     {
-        return admin_url('edit.php?post_type=give_forms&page=give-settings&tab=advanced&section=cloudflare_turnstile');
+        return admin_url('edit.php?post_type=give_forms&page=give-settings&tab=security&section=cloudflare_turnstile');
     }
 }

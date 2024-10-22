@@ -52,7 +52,6 @@ assets/dist/
 release
 public
 .storybook-static
-languages
 
 # Composer
 vendor
