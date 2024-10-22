@@ -52,7 +52,7 @@ class View
             return $content;
         }
 
-        echo $content;
+        echo esc_html($content);
     }
 
     /**
