@@ -13,4 +13,4 @@ jobs:
         uses: impress-org/givewp-github-actions/.github/workflows/generate-zip.yml@master
         with:
             ref: ${{ github.event.inputs.ref }}
-            plugin_slug: givewp-cloudflare-turnstile
+            plugin_slug: give-cloudflare-turnstile
