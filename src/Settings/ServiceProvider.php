@@ -26,7 +26,7 @@ class ServiceProvider implements \Give\ServiceProviders\ServiceProvider
     public function boot()
     {
         add_filter('give_get_sections_security', function($sections) {
-            $sections['cloudflare_turnstile'] = __('Cloudflare Turnstile', 'givewp-cloudflare-turnstile');
+            $sections['cloudflare_turnstile'] = __('Cloudflare Turnstile', 'give-cloudflare-turnstile');
 
             return $sections;
         });

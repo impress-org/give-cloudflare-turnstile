@@ -17,7 +17,7 @@ class Notices
     {
         Give()->notices->register_notice(
             [
-                'id' => 'givewp-cloudflare-turnstile-activation-error',
+                'id' => 'give-cloudflare-turnstile-activation-error',
                 'type' => 'error',
                 'description' => View::load('admin/notices/give-version-error'),
                 'show' => true,

@@ -22,7 +22,7 @@ class Links
             'settings' => sprintf(
                 '<a href="%s">%s</a>',
                 esc_url($settings->getSettingsUrl()),
-                __('Settings', 'givewp-cloudflare-turnstile')
+                __('Settings', 'give-cloudflare-turnstile')
             ),
         );
 

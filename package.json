@@ -12,7 +12,7 @@
     "author": "GiveWP",
     "license": "ISC",
     "files": [
-        "givewp-cloudflare-turnstile.php",
+        "give-cloudflare-turnstile.php",
         "build",
         "src",
         "vendor/composer",

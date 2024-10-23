@@ -42,7 +42,7 @@ class AddFieldToFormSchema
 
         /** @var TurnstileField $field */
         $field = TurnstileField::make('turnstile')
-            ->label(__('Please verify you are human', 'givewp-cloudflare-turnstile'))
+            ->label(__('Please verify you are human', 'give-cloudflare-turnstile'))
             ->defaultValue('')
             ->rules('required', new TurnstileFieldRule());
 

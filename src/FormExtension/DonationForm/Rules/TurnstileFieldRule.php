@@ -44,23 +44,23 @@ class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
         $secretKey = $settings->getSecretKey();
 
         if (empty($siteKey) || empty($secretKey)) {
-            Log::error(__('Turnstile missing credentials.', 'givewp-cloudflare-turnstile'), [
+            Log::error(__('Turnstile missing credentials.', 'give-cloudflare-turnstile'), [
                 'formId' => $values['formId'] ?? null,
             ]);
 
-            $fail(__('Permission denied.', 'givewp-cloudflare-turnstile'));
+            $fail(__('Permission denied.', 'give-cloudflare-turnstile'));
         }
 
         $response = $this->verifyToken($secretKey, $value);
 
         if (!$response->isSuccess()) {
-            Log::spam(__('Turnstile verification failed.', 'givewp-cloudflare-turnstile'), [
+            Log::spam(__('Turnstile verification failed.', 'give-cloudflare-turnstile'), [
                 'response' => $response,
                 'errorMessages' => $response->getErrorMessages() ?? [],
                 'formId' => $values['formId'] ?? null,
             ]);
 
-            $fail(__('Permission denied.', 'givewp-cloudflare-turnstile'));
+            $fail(__('Permission denied.', 'give-cloudflare-turnstile'));
         }
     }
 

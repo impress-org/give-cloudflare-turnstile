@@ -39,6 +39,6 @@ class EnqueueScripts
             'before'
         );
 
-        wp_set_script_translations($turnstileFieldScriptHandle, 'givewp-cloudflare-turnstile', GIVE_CLOUDFLARE_TURNSTILE_DIR . "languages");
+        wp_set_script_translations($turnstileFieldScriptHandle, 'give-cloudflare-turnstile', GIVE_CLOUDFLARE_TURNSTILE_DIR . "languages");
     }
 }
