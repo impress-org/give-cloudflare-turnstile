@@ -20,7 +20,7 @@ use GiveCloudflareTurnstile\Addon\Environment;
 defined('ABSPATH') or exit;
 
 // Add-on name
-define('GIVE_CLOUDFLARE_TURNSTILE_NAME', 'Give - Cloudflare Turnstile');
+define('GIVE_CLOUDFLARE_TURNSTILE_NAME', 'Cloudflare Turnstile');
 
 // Versions
 define('GIVE_CLOUDFLARE_TURNSTILE_VERSION', '1.0.0');
