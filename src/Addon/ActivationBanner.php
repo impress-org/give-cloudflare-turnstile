@@ -35,7 +35,7 @@ class ActivationBanner
             'name' => GIVE_CLOUDFLARE_TURNSTILE_NAME,
             'version' => GIVE_CLOUDFLARE_TURNSTILE_VERSION,
             'settings_url' => give(GlobalSettings::class)->getSettingsUrl(),
-            'documentation_url' => 'https://givewp.com/documentation/add-ons/boilerplate/',
+            'documentation_url' => 'https://givewp.com/documentation/add-ons/',
             'support_url' => 'https://givewp.com/support/',
             'testing' => false, // Never leave true.
         ];
