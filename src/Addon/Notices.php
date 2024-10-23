@@ -32,6 +32,6 @@ class Notices
      */
     public static function giveInactive(): void
     {
-        echo esc_attr(View::load('admin/notices/give-inactive'));
+        echo esc_html(View::load('admin/notices/give-inactive'));
     }
 }

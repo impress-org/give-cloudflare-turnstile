@@ -2,6 +2,8 @@
 
 namespace GiveCloudflareTurnstile\Addon;
 
+use GiveCloudflareTurnstile\Settings\Repositories\GlobalSettings;
+
 /**
  * @since 1.0.0
  */
@@ -14,10 +16,12 @@ class Links
      */
     public function __invoke($actions): array
     {
+        /** @var GlobalSettings $settings */
+        $settings = give(GlobalSettings::class);
         $newActions = array(
             'settings' => sprintf(
                 '<a href="%s">%s</a>',
-                esc_url(admin_url('edit.php?post_type=give_forms&page=give-settings&tab=advanced&section=cloudflare_turnstile')),
+                esc_url($settings->getSettingsUrl()),
                 __('Settings', 'givewp-cloudflare-turnstile')
             ),
         );
