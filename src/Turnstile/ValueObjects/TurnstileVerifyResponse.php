@@ -94,4 +94,12 @@ class TurnstileVerifyResponse
                 return 'Invalid response';
         }
     }
+
+    /**
+     * @return array
+     */
+    public function getErrorMessages(): array
+    {
+        return array_map([$this, 'getErrorMessage'], $this->errorCodes);
+    }
 }

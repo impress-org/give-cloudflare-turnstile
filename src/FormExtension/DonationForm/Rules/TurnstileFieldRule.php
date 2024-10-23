@@ -56,6 +56,7 @@ class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
         if (!$response->isSuccess()) {
             Log::spam(__('Turnstile verification failed.', 'givewp-cloudflare-turnstile'), [
                 'response' => $response,
+                'errorMessages' => $response->getErrorMessages() ?? [],
                 'formId' => $values['formId'] ?? null,
             ]);
 

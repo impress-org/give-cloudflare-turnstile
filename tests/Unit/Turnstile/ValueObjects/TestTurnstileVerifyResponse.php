@@ -29,4 +29,51 @@ class TestTurnstileVerifyResponse extends TestCase
         $this->assertTrue($turnstileVerifyResponse->success);
     }
 
+     /**
+     * @since 1.0.0
+      * @dataProvider errorMessagesProvider
+     */
+    public function testShouldGetErrorMessage(string $code, string $message): void
+    {
+        $turnstileVerifyResponse = new TurnstileVerifyResponse((object)[
+            'success' => false,
+            'error_codes' => [$code],
+        ]);
+
+        $this->assertEquals($message, $turnstileVerifyResponse->getErrorMessage($code));
+    }
+
+    /**
+     * @since 1.0.0
+     */
+    public function testShouldGetErrorMessages(): void
+    {
+        $turnstileVerifyResponse = new TurnstileVerifyResponse((object)[
+            'success' => false,
+            'error_codes' => ['missing-input-secret', 'invalid-input-secret'],
+        ]);
+
+        $this->assertEquals([
+            __("The secret parameter was not passed.", 'givewp-cloudflare-turnstile'),
+            __("The secret parameter was invalid or did not exist.", 'givewp-cloudflare-turnstile'),
+        ], $turnstileVerifyResponse->getErrorMessages());
+    }
+
+    /**
+     * @since 1.0.0
+     */
+    public function errorMessagesProvider(): array
+    {
+        return [
+            ['missing-input-secret', __("The secret parameter was not passed.", 'givewp-cloudflare-turnstile')],
+            ['invalid-input-secret', __("The secret parameter was invalid or did not exist.", 'givewp-cloudflare-turnstile')],
+            ['missing-input-response', __("The response parameter (token) was not passed.", 'givewp-cloudflare-turnstile')],
+            ['invalid-input-response', __("The response parameter (token) is invalid or has expired. Most of the time, this means a fake token has been used. If the error persists, contact customer support.", 'givewp-cloudflare-turnstile')],
+            ['bad-request', __("The request was rejected because it was malformed.", 'givewp-cloudflare-turnstile')],
+            ['timeout-or-duplicate', __("The response parameter (token) has already been validated before. This means that the token was issued five minutes ago and is no longer valid, or it was already redeemed.", 'givewp-cloudflare-turnstile')],
+            ['internal-error', __("An internal error happened while validating the response. The request can be retried.", 'givewp-cloudflare-turnstile')],
+            ['', __("Invalid response", 'givewp-cloudflare-turnstile')],
+        ];
+    }
+
 }
