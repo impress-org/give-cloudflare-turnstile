@@ -9,7 +9,7 @@ Requires Give: 3.17.0
 Requires PHP: 7.2
 License: GPLv3
 
-The Cloudflare Turnstile integration for GiveWP protects donation forms from spam by verifying human users without requiring traditional CAPTCHA methods.
+Reduce donation spam with Cloudflare turnstile, a user-friendly, privacy-preserving alternative to CAPTCHA
 
 == Description ==
 The Cloudflare Turnstile integration for **[GiveWP](https://go.givewp.com/cloud "Visit the GiveWP Website")** secures donation forms against bots. It prevents spam donations by using simple checks to ensure only real humans can submit your forms without choosing how many pictures include a bicycle. 
@@ -35,10 +35,6 @@ Stay in touch with us for important plugin news and updates:
 * [GiveWP Newsletter](https://go.givewp.com/subcloud)
 * [GiveWP Facebook](https://go.givewp.com/fbcloud)
 
-== Installation == 
-= Minimum Requirements =
-= Setup Instructions = 
-
 == Frequently Asked Questions ==
 = Does Cloudflare Turnstile work with older donation forms? =
 No, the integration only works with forms created using the Visual Donation Form Builder. This feature won’t protect older forms.
@@ -53,8 +49,8 @@ You can adjust settings in your Cloudflare account to fine-tune the behavior, bu
 
 == Screenshots == 
 
-== Development Notes ==
-
 == Changelog ==
+= 1.0.0 =
+* Initial release of the Cloudflare Turnstile integration for GiveWP.
 
 == Upgrade Notice == 

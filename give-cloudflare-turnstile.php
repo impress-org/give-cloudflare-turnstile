@@ -42,7 +42,7 @@ add_action('admin_init', [Environment::class, 'checkEnvironment']);
  // Register the add-on service provider with the GiveWP core.
 add_action(
     'before_give_init',
-    function () {
+    static function () {
         // Check Give min required version.
          if (Environment::giveMinRequiredVersionCheck()) {
             give()->registerServiceProvider(GiveCloudflareTurnstile\Addon\ServiceProvider::class);
