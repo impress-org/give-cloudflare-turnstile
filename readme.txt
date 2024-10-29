@@ -14,7 +14,7 @@ The Cloudflare Turnstile integration for GiveWP protects donation forms from spa
 == Description ==
 The Cloudflare Turnstile integration for **[GiveWP](https://go.givewp.com/cloud "Visit the GiveWP Website")** secures donation forms against bots. It prevents spam donations by using simple checks to ensure only real humans can submit your forms without choosing how many pictures include a bicycle. 
 
-When you enable Cloudflare Turnstile in GIveWP and connect to your Cloudflare account using API keys, your forms are instantly protected. This integration only applies to forms created with the Visual Donation Form Builder; older form templates are not protected.
+When you enable Cloudflare Turnstile in GiveWP and connect to your Cloudflare account using API keys, your forms are instantly protected. This integration only applies to forms created with the Visual Donation Form Builder; older form templates are not protected.
 
 == ⭐️ Why Use Cloudflare Turnstile for GiveWP? ==
 Using CloudFlare Turnstile for GiveWP can help you secure your forms while creating a smoother donor experience. 
