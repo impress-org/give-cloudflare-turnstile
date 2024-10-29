@@ -36,16 +36,16 @@ Stay in touch with us for important plugin news and updates:
 * [GiveWP Facebook](https://go.givewp.com/fbcloud)
 
 == Frequently Asked Questions ==
-= Does Cloudflare Turnstile work with older donation forms? =
-No, the integration only works with forms created using the Visual Donation Form Builder. This feature won’t protect older forms.
-= Is Cloudflare Turnstile compatible with all browsers and devices? = 
-Yes, Cloudflare Turnstile is designed to be lightweight and compatible with most modern browsers and devices, ensuring smooth user interaction.
 = Do I need a Cloudflare account to use Turnstile with GiveWP? = 
 Yes, you'll need a Cloudflare account and API keys to activate and manage the Turnstile integration within GiveWP.
+= Is Cloudflare Turnstile compatible with all browsers and devices? = 
+Yes, Cloudflare Turnstile is designed to be lightweight and compatible with most modern browsers and devices, ensuring smooth user interaction.
 = Will Cloudflare Turnstile affect accessibility for my donors? = 
 No, Turnstile is designed to be more accessible than traditional CAPTCHAs, as it reduces the need for users to complete visual puzzles or tasks, improving user experience for everyone.
 = What should I do if Turnstile blocks legitimate donors? = 
 You can adjust settings in your Cloudflare account to fine-tune the behavior, but this issue is rare since Turnstile is designed to minimize false positives.
+= Does Cloudflare Turnstile work with option-based donation forms? =
+No, the integration only works with forms created using the Visual Donation Form Builder. This feature won’t protect option-based forms.
 
 == Screenshots == 
 
