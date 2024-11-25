@@ -2,8 +2,8 @@
 Contributors: givewp, jonwaldstein
 Donate link: https://givewp.com
 Tags: donation, spam, captcha, turnstile, security
-Requires at least: 6.4
-Tested up to: 6.6
+Requires at least: 6.5
+Tested up to: 6.7
 Stable tag: 1.0.0
 Requires Give: 3.17.0
 Requires PHP: 7.2

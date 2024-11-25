@@ -6,7 +6,7 @@
  * Plugin URI:          https://github.com/impress-org/givewp
  * Description:         Reduce donation spam with Cloudflare turnstile, a user-friendly, privacy-preserving alternative to CAPTCHA
  * Version:             1.0.0
- * Requires at least:   6.4
+ * Requires at least:   6.5
  * Requires PHP:        7.2
  * Author:              GiveWP
  * Author URI:          https://givewp.com/
