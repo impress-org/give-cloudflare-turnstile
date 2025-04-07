@@ -3,7 +3,7 @@
 namespace GiveCloudflareTurnstile\FormExtension\DonationForm\Fields;
 
 use Give\Framework\FieldsAPI\Concerns\HasLabel;
-use Give\Framework\FieldsAPI\Field;
+use Give\Framework\FieldsAPI\SecurityChallenge;
 
 /**
  * Cloudflare Turnstile field.
@@ -11,7 +11,7 @@ use Give\Framework\FieldsAPI\Field;
  *
  * @unreleased
  */
-class TurnstileField extends Field {
+class TurnstileField extends SecurityChallenge {
     use HasLabel;
 
     const TYPE = 'turnstile';
