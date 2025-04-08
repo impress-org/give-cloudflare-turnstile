@@ -11,13 +11,13 @@ use GiveCloudflareTurnstile\Turnstile\Repositories\TurnstileRepository;
 use GiveCloudflareTurnstile\Turnstile\ValueObjects\TurnstileVerifyResponse;
 
 /**
- * @unreleased
+ * @since 1.0.0
  */
 class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
 {
 
     /**
-     * @unreleased
+     * @since 1.0.0
      */
     public static function id(): string
     {
@@ -25,7 +25,7 @@ class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
     }
 
     /**
-     * @unreleased
+     * @since 1.0.0
      */
     public static function fromString(string $options = null): ValidationRule
     {
@@ -33,7 +33,7 @@ class TurnstileFieldRule implements ValidationRule, ValidatesOnFrontEnd
     }
 
     /**
-     * @unreleased
+     * @since 1.0.0
      */
     public function __invoke($value, Closure $fail, string $key, array $values)
     {
