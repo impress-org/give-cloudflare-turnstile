@@ -23,6 +23,6 @@
     ],
     "dependencies": {
         "@marsidev/react-turnstile": "^1.0.2",
-        "@wordpress/scripts": "^27.5.0"
+        "@wordpress/scripts": "^26.19.0"
     }
 }
