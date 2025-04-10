@@ -50,11 +50,11 @@ No, the integration only works with forms created using the Visual Donation Form
 == Screenshots == 
 
 == Changelog ==
-= 1.1.0 =
+= 1.1.0: April 16th, 2025 =
 * New: Added compatibility with GiveWP 4.1.0 and above
 * Fix: Resolved an issue when using PayPal Donations
 
-= 1.0.0 =
+= 1.0.0: Nov 25th, 2024 =
 * Initial release of the Cloudflare Turnstile integration for GiveWP.
 
 == Upgrade Notice == 
