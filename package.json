@@ -3,7 +3,7 @@
     "private": true,
     "main": "index.js",
     "scripts": {
-        "dev": "wp-scripts start",
+        "dev": "wp-scripts build",
         "start": "wp-scripts start",
         "watch": "wp-scripts start",
         "build": "wp-scripts build",
