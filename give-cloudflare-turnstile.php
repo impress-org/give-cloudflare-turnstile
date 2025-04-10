@@ -7,7 +7,7 @@
  * Description:         Reduce donation spam with Cloudflare turnstile, a user-friendly, privacy-preserving alternative to CAPTCHA
  * Version:             1.0.0
  * Requires at least:   6.5
- * Requires PHP:        7.2
+ * Requires PHP:        7.4
  * Author:              GiveWP
  * Author URI:          https://givewp.com/
  * Text Domain:         give-cloudflare-turnstile

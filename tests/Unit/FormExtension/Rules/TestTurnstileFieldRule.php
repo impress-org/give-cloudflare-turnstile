@@ -10,7 +10,7 @@ use GiveCloudflareTurnstile\FormExtension\DonationForm\Rules\TurnstileFieldRule;
 use GiveCloudflareTurnstile\Tests\Unit\TestTraits\HasCloudFlareTurnstileSettings;
 use GiveCloudflareTurnstile\Turnstile\Repositories\TurnstileRepository;
 use GiveCloudflareTurnstile\Turnstile\ValueObjects\TurnstileVerifyResponse;
-use PHPUnit_Framework_MockObject_MockBuilder;
+use PHPUnit\Framework\MockObject\MockBuilder;
 
 /**
  * @since 1.0.0
@@ -114,7 +114,7 @@ class TestTurnstileFieldRule extends TestCase
     {
         $this->mock(
             TurnstileRepository::class,
-            function (PHPUnit_Framework_MockObject_MockBuilder $mockBuilder) {
+            function (MockBuilder $mockBuilder) {
                 $mockBuilder->setMethods(['verify']);
 
                 return $mockBuilder->getMock();
@@ -127,9 +127,9 @@ class TestTurnstileFieldRule extends TestCase
      */
     public function getMockRule()
     {
-        return $this->createMock(
+        return $this->createMockWithCallback(
             TurnstileFieldRule::class,
-            function (PHPUnit_Framework_MockObject_MockBuilder $mockBuilder) {
+            function (MockBuilder $mockBuilder) {
                 $mockBuilder->setMethods(['verifyToken']);
 
                 return $mockBuilder->getMock();
