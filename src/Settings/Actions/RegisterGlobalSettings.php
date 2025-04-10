@@ -5,12 +5,12 @@ namespace GiveCloudflareTurnstile\Settings\Actions;
 use GiveCloudflareTurnstile\Settings\ValueObjects\SettingKeys;
 
 /**
- * @unreleased
+ * @since 1.0.0
  */
 class RegisterGlobalSettings
 {
     /**
-     * @unreleased
+     * @since 1.0.0
      */
     public function __invoke(array $settings): array
     {
@@ -22,7 +22,7 @@ class RegisterGlobalSettings
     }
 
     /**
-     * @unreleased
+     * @since 1.0.0
      */
     protected function getSettings(): array
     {
@@ -42,7 +42,7 @@ class RegisterGlobalSettings
     }
 
     /**
-     * @unreleased
+     * @since 1.0.0
      */
     public function getEnableSettings(): array
     {

@@ -6,7 +6,7 @@ Requires at least: 6.5
 Tested up to: 6.7
 Stable tag: 1.0.0
 Requires Give: 3.17.0
-Requires PHP: 7.2
+Requires PHP: 7.4
 License: GPLv3
 
 Reduce donation spam with Cloudflare turnstile, a user-friendly, privacy-preserving alternative to CAPTCHA

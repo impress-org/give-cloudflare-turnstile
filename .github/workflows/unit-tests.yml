@@ -12,3 +12,4 @@ jobs:
         with:
             addon_slug: give-cloudflare-turnstile
             givewp_branch: develop
+            php_matrix: '[ 7.4, 8.4 ]'
